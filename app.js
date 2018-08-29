@@ -11,3 +11,7 @@ let ELgame = document.querySelector('#game'),
   ELguessBtn = document.querySelector('#guess-btn'),
   ELguessInput = document.querySelector('#guess-input'),
   ELmessage = document.querySelector('.message');
+
+//Make min and max dynamic
+ELminNum.textContent = min;
+ELmaxNum.textContent = max;
