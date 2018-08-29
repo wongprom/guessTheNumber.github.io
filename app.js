@@ -23,11 +23,12 @@ ELguessBtn.addEventListener('click', function() {
 
   //Validate input
   if (isNaN(guess) || guess < min || guess > max) {
-    errorMessage(`Please enter a number between ${min} and ${max}`);
+    errorMessage(`Please enter a number between ${min} and ${max}`, 'red');
   }
 });
 
 //Error message
-function errorMessage(message) {
+function errorMessage(message, color) {
+  ELmessage.style.color = color;
   ELmessage.textContent = message;
 }
