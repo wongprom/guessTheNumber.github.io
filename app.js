@@ -15,3 +15,19 @@ let ELgame = document.querySelector('#game'),
 //Make min and max dynamic
 ELminNum.textContent = min;
 ELmaxNum.textContent = max;
+
+//Listen for guess btn
+ELguessBtn.addEventListener('click', function() {
+  //Make input to int
+  let guess = parseInt(ELguessInput.value);
+
+  //Validate input
+  if (isNaN(guess) || guess < min || guess > max) {
+    errorMessage(`Please enter a number between ${min} and ${max}`);
+  }
+});
+
+//Error message
+function errorMessage(message) {
+  ELmessage.textContent = message;
+}
