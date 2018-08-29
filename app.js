@@ -23,12 +23,23 @@ ELguessBtn.addEventListener('click', function() {
 
   //Validate input
   if (isNaN(guess) || guess < min || guess > max) {
-    errorMessage(`Please enter a number between ${min} and ${max}`, 'red');
+    setMessage(`Please enter a number between ${min} and ${max}`, 'red');
+  }
+
+  //Check if right number
+  if (guess === winningNum) {
+    //Disable input
+    ELguessInput.disabled = true;
+    //Change border color
+    ELguessInput.style.borderColor = 'green';
+    //Winning mesage
+    setMessage(`${winningNum} is the winning number!!`, 'green');
+  } else {
   }
 });
 
 //Error message
-function errorMessage(message, color) {
+function setMessage(message, color) {
   ELmessage.style.color = color;
   ELmessage.textContent = message;
 }
