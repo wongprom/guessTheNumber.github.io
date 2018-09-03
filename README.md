@@ -1,3 +1,11 @@
-[Skeleton cdn](https://cdnjs.com/libraries/skeleton)
+# A Simple Game That User Has To Guess The Right Number From 1 to 10
 
-Skeleton is a small collection of CSS files that can help you rapidly develop sites that look beautiful at any size, be it a 17 inch laptop screen or an iPhone.
+[Go To GitHub-Pages](https....) For This Project.
+
+## This Project Is Built With
+
+- Html
+- JavaScript
+- Css [Skeleton cdn](https://cdnjs.com/libraries/skeleton)
+
+Skeleton is a small collection of CSS files that can help you rapidly develop sites that look beautiful.
