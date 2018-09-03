@@ -16,6 +16,13 @@ let ELgame = document.querySelector('#game'),
 ELminNum.textContent = min;
 ELmaxNum.textContent = max;
 
+//Play again event listner
+game.addEventListener('mousedown', function(e) {
+  if (e.target.className === 'play-again') {
+    window.location.reload();
+  }
+});
+
 //Listen for guess btn
 ELguessBtn.addEventListener('click', function() {
   //Make input to int
@@ -65,6 +72,9 @@ function gameOver(won, msg) {
   ELmessage.style.color = color;
   //Winning message
   setMessage(msg);
+  //Play again?
+  ELguessBtn.value = 'Play Again';
+  ELguessBtn.className += 'play-again';
 }
 
 //Set message
