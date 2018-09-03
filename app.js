@@ -1,7 +1,7 @@
 // Game values
 let min = 1,
   max = 10,
-  winningNum = 2,
+  winningNum = getRandomNum(min, max),
   guessesLeft = 3;
 
 //Get elements from Html
@@ -75,6 +75,11 @@ function gameOver(won, msg) {
   //Play again?
   ELguessBtn.value = 'Play Again';
   ELguessBtn.className += 'play-again';
+}
+
+//Get winning num between 0 and 11
+function getRandomNum(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 //Set message
