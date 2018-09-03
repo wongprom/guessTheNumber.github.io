@@ -29,23 +29,14 @@ ELguessBtn.addEventListener('click', function() {
   //Check if right number
   if (guess === winningNum) {
     //Game over - won
-    //Disable input
-    ELguessInput.disabled = true;
-    //Change border color
-    ELguessInput.style.borderColor = 'green';
-    //Winning message
-    setMessage(`${winningNum} is the winning number, you win!!`, 'green');
+    gameOver(true, `${winningNum} is the winning number, you win!!`);
   } else {
     guessesLeft -= 1;
     if (guessesLeft === 0) {
       //Game over - lost
-      ELguessInput.disabled = true;
-      //Change border color
-      ELguessInput.style.borderColor = 'red';
-      //Winning message
-      setMessage(
-        `Game over, you lost. The winning number was ${winningNum}`,
-        'red'
+      gameOver(
+        false,
+        `Game over, you lost. The winning number was ${winningNum}`
       );
     } else {
       //Game continues - wrong aswer
@@ -60,6 +51,21 @@ ELguessBtn.addEventListener('click', function() {
     }
   }
 });
+
+//Game over
+function gameOver(won, msg) {
+  let color;
+  won === true ? (color = 'green') : (color = 'red');
+
+  //Disable input
+  ELguessInput.disabled = true;
+  //Change border color
+  ELguessInput.style.borderColor = color;
+  //Change color
+  ELmessage.style.color = color;
+  //Winning message
+  setMessage(msg);
+}
 
 //Set message
 function setMessage(message, color) {
